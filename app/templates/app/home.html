@@ -1,0 +1,14 @@
+{% extends 'app/base.html' %}
+{% block content %}
+<span><a href="{% url 'logout' %}">Logout</a></span>
+<p><span>Hello, {{request.user}}</span></p>
+
+<p> Balance {{ el }} BTC</p>
+<span><a href="{% url 'new_order' %}">New order</a></span>
+<span><a href="{% url 'active' %}">Active orders</a></span>
+<span><a href="{% url 'execute' %}">Execute orders</a></span>
+
+{% if user.is_superuser %}
+<p>{{ gain }}</p>
+{% endif %}
+{% endblock %}

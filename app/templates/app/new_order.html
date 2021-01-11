@@ -1,0 +1,5 @@
+<h2>New ORDER</h2>
+  <form method="POST" class="OrderForm">{% csrf_token %}
+    {{ form.as_p }}
+  <button type="submit" class="save btn btn-default">Save</button>
+ </form>
