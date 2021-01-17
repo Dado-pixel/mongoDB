@@ -22,7 +22,10 @@ def home(request):
     val2 = sum(sell_op)
     for x in balance:
         list.append(x)
-    el = (val1+list[0])-val2
+    if not list:
+        el=0
+    else:
+        el = (val1+list[0])-val2
     contex = {'el': el,
               'gain': gain}
     return render(request, 'app/home.html', contex)
